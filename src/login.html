@@ -1,0 +1,77 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#111111" />
+    <title>Iniciar sesión — Toyota</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="css/navbar.css" />
+    <link rel="stylesheet" href="css/login.css" />
+  </head>
+  <body class="login-page">
+    <header class="site-header">
+      <nav class="navbar" aria-label="Navegación principal">
+        <a class="toyota-brand" href="index.html" aria-label="Toyota, inicio">
+          <svg class="toyota-emblem" viewBox="0 0 48 34" role="img" aria-label="Emblema Toyota">
+            <ellipse cx="24" cy="17" rx="21" ry="14" />
+            <ellipse cx="24" cy="17" rx="9" ry="12" />
+            <ellipse cx="24" cy="17" rx="19" ry="7" />
+          </svg>
+          <span>TOYOTA</span>
+        </a>
+        <a class="navbar-link login-home-link" href="index.html">Volver al inicio</a>
+      </nav>
+    </header>
+
+    <main class="login-main">
+      <section class="login-card" aria-labelledby="login-title">
+        <p class="login-eyebrow">TU ESPACIO TOYOTA</p>
+        <h1 id="login-title">Qué bueno verte <span>de nuevo.</span></h1>
+        <p class="login-intro">Inicia sesión para continuar.</p>
+
+        <form class="login-form" id="login-form">
+          <label for="login-email">Correo electrónico</label>
+          <input
+            id="login-email"
+            name="email"
+            type="email"
+            autocomplete="email"
+            placeholder="nombre@correo.com"
+            required
+          />
+
+          <label for="login-password">Contraseña</label>
+          <input
+            id="login-password"
+            name="password"
+            type="password"
+            autocomplete="current-password"
+            placeholder="Ingresa tu contraseña"
+            required
+          />
+
+          <button type="submit">Iniciar sesión <span aria-hidden="true">→</span></button>
+          <p class="login-message" id="login-message" role="status" aria-live="polite"></p>
+        </form>
+
+        <a class="login-back-link" href="index.html">← Regresar a Toyota</a>
+      </section>
+    </main>
+
+    <script>
+      const loginForm = document.querySelector("#login-form");
+
+      loginForm.addEventListener("submit", (event) => {
+        event.preventDefault();
+        window.location.href =
+          "file:///C:/Users/EDTecnica/Desktop/narbar_L06/src/views/dashbaard.html";
+      });
+    </script>
+  </body>
+</html>

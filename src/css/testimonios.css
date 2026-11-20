@@ -1,0 +1,156 @@
+.testimonials-section {
+  padding: var(--section-space) clamp(18px, 4vw, 56px);
+  background: #fff;
+  color: #171717;
+}
+
+.testimonials-container {
+  width: min(1220px, 100%);
+  margin-inline: auto;
+}
+
+.testimonials-heading {
+  display: flex;
+  align-items: end;
+  justify-content: space-between;
+  gap: 28px;
+  margin-bottom: 32px;
+}
+
+.testimonials-eyebrow {
+  margin: 0 0 12px;
+  color: #686866;
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+}
+
+.testimonials-heading h2 {
+  margin: 0;
+  font-family: var(--font-display);
+  font-size: 58px;
+  font-weight: 500;
+  line-height: 1.05;
+}
+
+.testimonials-heading h2 span {
+  color: #777774;
+}
+
+.testimonials-intro {
+  max-width: 380px;
+  margin: 0 0 4px;
+  color: #5f5f5d;
+  font-size: 12px;
+  line-height: 1.7;
+}
+
+.testimonials-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 16px;
+}
+
+.testimonial-card {
+  display: flex;
+  min-width: 0;
+  min-height: 220px;
+  flex-direction: column;
+  align-items: start;
+  gap: 16px;
+  padding: 20px;
+  border: 1px solid #e4e4e0;
+  border-radius: 8px;
+  background: #fafaf8;
+  transition: border-color 160ms ease;
+}
+
+.testimonial-card:hover {
+  border-color: #bdbdb7;
+}
+
+.testimonial-person {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.testimonial-avatar {
+  display: grid;
+  width: 42px;
+  height: 42px;
+  flex: 0 0 auto;
+  place-items: center;
+  border-radius: 50%;
+  color: #252725;
+  font-size: 11px;
+  font-weight: 700;
+}
+
+.testimonial-photo {
+  object-fit: cover;
+}
+
+.testimonial-person h3 {
+  margin: 0;
+  font-family: var(--font-display);
+  font-size: 13px;
+  font-weight: 700;
+}
+
+.testimonial-person p {
+  margin: 4px 0 0;
+  color: #777774;
+  font-size: 10px;
+}
+
+.testimonial-stars {
+  color: #986a24;
+  font-size: 15px;
+  letter-spacing: 0.08em;
+  line-height: 1;
+}
+
+.testimonial-star-muted {
+  color: #c9c9c4;
+}
+
+.testimonial-card blockquote {
+  margin: 0;
+  color: #50504d;
+  font-size: 12px;
+  line-height: 1.7;
+}
+
+@media (max-width: 900px) {
+  .testimonials-heading {
+    align-items: start;
+    flex-direction: column;
+    gap: 14px;
+  }
+
+  .testimonials-heading h2 {
+    font-size: 44px;
+  }
+
+  .testimonials-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 560px) {
+  .testimonials-heading h2 {
+    font-size: 36px;
+  }
+
+  .testimonials-grid {
+    grid-template-columns: minmax(0, 1fr);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .testimonial-card {
+    transition: none;
+  }
+}

@@ -1,0 +1,202 @@
+:root {
+  color-scheme: dark;
+  --color-black: #111111;
+  --color-white: #f7f7f5;
+  --color-gray: #a6a6a4;
+  --color-line: rgba(255, 255, 255, 0.15);
+  --section-space: clamp(56px, 7vw, 96px);
+  --header-height: 88px;
+  --font-body: "DM Sans", Arial, sans-serif;
+  --font-display: "Manrope", "DM Sans", Arial, sans-serif;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  min-width: 320px;
+  scroll-behavior: smooth;
+  scroll-padding-top: var(--header-height);
+}
+
+body {
+  min-width: 320px;
+  margin: 0;
+  background: var(--color-black);
+  color: var(--color-white);
+  font-family: var(--font-body);
+  -webkit-font-smoothing: antialiased;
+}
+
+body,
+button,
+a {
+  font-family: var(--font-body);
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+button {
+  color: inherit;
+}
+
+.site-header {
+  position: sticky;
+  top: 0;
+  z-index: 5;
+  width: 100%;
+  background: var(--color-black);
+}
+
+.navbar {
+  display: flex;
+  width: min(1440px, 100%);
+  min-height: 88px;
+  align-items: center;
+  justify-content: space-between;
+  margin-inline: auto;
+  padding-inline: clamp(24px, 6vw, 88px);
+  border-bottom: 1px solid var(--color-line);
+}
+
+.toyota-brand {
+  display: inline-flex;
+  flex: 0 0 auto;
+  align-items: center;
+  gap: 12px;
+  font-family: var(--font-display);
+  font-size: 17px;
+  font-weight: 800;
+  letter-spacing: 0.19em;
+}
+
+.toyota-emblem {
+  width: 42px;
+  height: 30px;
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 1.8;
+}
+
+.navbar-links {
+  display: flex;
+  align-items: center;
+  gap: clamp(20px, 3vw, 42px);
+}
+
+.navbar-link {
+  color: #d0d0ce;
+  font-size: 12px;
+  font-weight: 500;
+  transition: color 160ms ease;
+}
+
+.navbar-link:hover {
+  color: var(--color-white);
+}
+
+.navbar-cta {
+  display: inline-flex;
+  min-height: 44px;
+  align-items: center;
+  justify-content: center;
+  gap: 16px;
+  padding: 0 18px;
+  border: 1px solid rgba(255, 255, 255, 0.65);
+  border-radius: 2px;
+  color: var(--color-white);
+  transition: background 160ms ease, color 160ms ease;
+}
+
+.navbar-cta:hover {
+  background: var(--color-white);
+  color: var(--color-black);
+}
+
+.navbar-toggle {
+  display: none;
+  width: 44px;
+  height: 44px;
+  align-content: center;
+  justify-items: center;
+  gap: 6px;
+  border: 1px solid var(--color-line);
+  border-radius: 50%;
+  background: transparent;
+  cursor: pointer;
+}
+
+.navbar-toggle span {
+  width: 17px;
+  height: 1px;
+  background: currentColor;
+  transition: transform 160ms ease;
+}
+
+.navbar-toggle[aria-expanded="true"] span:first-child {
+  transform: translateY(3.5px) rotate(45deg);
+}
+
+.navbar-toggle[aria-expanded="true"] span:last-child {
+  transform: translateY(-3.5px) rotate(-45deg);
+}
+
+:focus-visible {
+  outline: 2px solid var(--color-white);
+  outline-offset: 5px;
+}
+
+@media (max-width: 800px) {
+  :root {
+    --header-height: 76px;
+  }
+
+  .navbar {
+    min-height: 76px;
+    padding-inline: 24px;
+  }
+
+  .navbar-toggle {
+    display: grid;
+  }
+
+  .navbar-links {
+    position: absolute;
+    top: 100%;
+    right: 0;
+    left: 0;
+    display: none;
+    align-items: stretch;
+    gap: 0;
+    padding: 12px 24px 24px;
+    border-bottom: 1px solid var(--color-line);
+    background: var(--color-black);
+  }
+
+  .navbar-links.is-open {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .navbar-link {
+    padding-block: 16px;
+    border-bottom: 1px solid var(--color-line);
+  }
+
+  .navbar-cta {
+    margin-top: 18px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    scroll-behavior: auto !important;
+    transition-duration: 0.01ms !important;
+  }
+}
